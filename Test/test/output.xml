@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.6 on win32)" generated="2025-09-05T21:15:19.267298" rpa="false" schemaversion="5">
+<suite id="s1" name="Desafio &amp; ..">
+<suite id="s1-s1" name="Desafio" source="C:\Desafio_Accenture\Test\test\desafio.robot">
+<test id="s1-s1-t1" name="Preencher o formulário e verificar popup" line="10">
+<kw name="Dado Dado que estou na página de Practice Form" owner="preenchendoForm">
+<kw name="Abrir o site DemoQA" owner="openBrowser">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-09-05T21:15:19.420204" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000012FDBFAFDA0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-09-05T21:15:19.420204" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:19.420204" elapsed="0.000000"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:19.420204" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-09-05T21:15:19.420204" elapsed="1.797116"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:21.217895" level="INFO">Opening url 'https://demoqa.com'</msg>
+<arg>https://demoqa.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-09-05T21:15:21.217895" elapsed="8.185266"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-05T21:15:29.403161" elapsed="0.037685"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:29.453381" level="INFO">Page title is 'DEMOQA'.</msg>
+<arg>DEMOQA</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-09-05T21:15:29.440846" elapsed="0.012535"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-09-05T21:15:29.453381" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:15:19.420204" elapsed="10.035191"/>
+</kw>
+<kw name="Remover banners" owner="openBrowser">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:29.456321" level="INFO">Executing JavaScript:
+var b=document.getElementById('fixedban'); if(b){ b.remove(); }
+Without any arguments.</msg>
+<arg>var b=document.getElementById('fixedban'); if(b){ b.remove(); }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:29.456321" elapsed="0.029096"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:29.485914" level="INFO">Executing JavaScript:
+var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }
+Without any arguments.</msg>
+<arg>var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:29.485914" elapsed="0.021932"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:29.510850" level="INFO">Executing JavaScript:
+var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());
+Without any arguments.</msg>
+<arg>var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:29.508860" elapsed="0.013229"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:15:29.455395" elapsed="0.066694"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${opcao_Forms}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:15:29.523084" elapsed="0.077370"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${opcao_Forms}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-09-05T21:15:29.600454" elapsed="0.305136"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:29.905590" level="INFO">Clicking element '//*[@id="app"]/div/div/div[2]/div/div[2]/div/div[3]/h5'.</msg>
+<arg>${opcao_Forms}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:29.905590" elapsed="0.161443"/>
+</kw>
+<kw name="Remover banners" owner="openBrowser">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:30.068006" level="INFO">Executing JavaScript:
+var b=document.getElementById('fixedban'); if(b){ b.remove(); }
+Without any arguments.</msg>
+<arg>var b=document.getElementById('fixedban'); if(b){ b.remove(); }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.067033" elapsed="0.005057"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:30.073173" level="INFO">Executing JavaScript:
+var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }
+Without any arguments.</msg>
+<arg>var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.072090" elapsed="0.005356"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:30.078155" level="INFO">Executing JavaScript:
+var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());
+Without any arguments.</msg>
+<arg>var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.078155" elapsed="0.007034"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:15:30.067033" elapsed="0.018728"/>
+</kw>
+<kw name="Set Focus To Element" owner="SeleniumLibrary">
+<arg>${submenu_PractForm}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.085761" elapsed="0.020336"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${submenu_PractForm}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.106097" elapsed="0.012587"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:30.118684" level="INFO">Clicking element 'xpath=//span[@class="text" and text()="Practice Form"]'.</msg>
+<arg>${submenu_PractForm}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.118684" elapsed="0.119115"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:15:19.420204" elapsed="10.817595"/>
+</kw>
+<kw name="Quando preencho o formulário" owner="preenchendoForm">
+<kw name="Remover banners" owner="openBrowser">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:30.239458" level="INFO">Executing JavaScript:
+var b=document.getElementById('fixedban'); if(b){ b.remove(); }
+Without any arguments.</msg>
+<arg>var b=document.getElementById('fixedban'); if(b){ b.remove(); }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.239458" elapsed="0.006848"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:30.247326" level="INFO">Executing JavaScript:
+var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }
+Without any arguments.</msg>
+<arg>var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.247326" elapsed="0.004297"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:30.253505" level="INFO">Executing JavaScript:
+var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());
+Without any arguments.</msg>
+<arg>var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.253505" elapsed="0.008010"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:15:30.239458" elapsed="0.022057"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:30.261515" level="INFO">Typing text 'Adriano' into text field 'firstName'.</msg>
+<arg>${campo_Fname}</arg>
+<arg>Adriano</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.261515" elapsed="0.162527"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:30.425043" level="INFO">Typing text 'Queiroz' into text field 'lastName'.</msg>
+<arg>${campo_Lname}</arg>
+<arg>Queiroz</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.424042" elapsed="0.087060"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:30.512112" level="INFO">Typing text 'adriano@teste.com' into text field 'userEmail'.</msg>
+<arg>${campo_Email}</arg>
+<arg>adriano@teste.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.511102" elapsed="0.195583"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${radio_Male}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.706685" elapsed="0.024123"/>
+</kw>
+<kw name="Set Focus To Element" owner="SeleniumLibrary">
+<arg>${radio_Male}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.730808" elapsed="0.016880"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:30.748688" level="INFO">Clicking element 'xpath=//label[@for="gender-radio-1"]'.</msg>
+<arg>${radio_Male}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.748688" elapsed="0.073618"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:30.822306" level="INFO">Typing text '9999999999' into text field 'userNumber'.</msg>
+<arg>${campo_Mobile}</arg>
+<arg>9999999999</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:30.822306" elapsed="0.274765"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:31.098089" level="INFO">Clicking element 'dateOfBirthInput'.</msg>
+<arg>${campo_Date}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:31.097071" elapsed="0.325703"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:31.422774" level="INFO">Selecting options from selection list 'class=react-datepicker__year-select' by value 1981.</msg>
+<arg>class=react-datepicker__year-select</arg>
+<arg>1981</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-09-05T21:15:31.422774" elapsed="0.177258"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:31.601031" level="INFO">Selecting options from selection list 'class=react-datepicker__month-select' by value 6.</msg>
+<arg>class=react-datepicker__month-select</arg>
+<arg>6</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-09-05T21:15:31.601031" elapsed="0.363787"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:31.965827" level="INFO">Clicking element 'xpath=//div[contains(@class,'react-datepicker__day--025')]'.</msg>
+<arg>xpath=//div[contains(@class,'react-datepicker__day--025')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:31.964818" elapsed="0.083138"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T21:15:35.049414" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T21:15:32.048863" elapsed="3.000551"/>
+</kw>
+<kw name="Set Focus To Element" owner="SeleniumLibrary">
+<arg>${campo_Subject}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:35.049414" elapsed="0.034407"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${campo_Subject}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:15:35.083821" elapsed="0.027711"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:35.111532" level="INFO">Clicking element 'subjectsContainer'.</msg>
+<arg>${campo_Subject}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:35.111532" elapsed="0.105885"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:35.219530" level="INFO">Sending key(s) ('Economics', 'ENTER') to subjectsContainer element.</msg>
+<msg time="2025-09-05T21:15:35.527504" level="INFO">Sending keys Economics</msg>
+<msg time="2025-09-05T21:15:35.602922" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-09-05T21:15:35.602922" level="INFO">Releasing special key ENTER.</msg>
+<arg>${campo_Subject}</arg>
+<arg>Economics</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-09-05T21:15:35.218517" elapsed="0.408715"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T21:15:38.628467" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T21:15:35.627232" elapsed="3.001235"/>
+</kw>
+<kw name="Remover banners" owner="openBrowser">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:38.629531" level="INFO">Executing JavaScript:
+var b=document.getElementById('fixedban'); if(b){ b.remove(); }
+Without any arguments.</msg>
+<arg>var b=document.getElementById('fixedban'); if(b){ b.remove(); }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:38.628997" elapsed="0.006544"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:38.636073" level="INFO">Executing JavaScript:
+var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }
+Without any arguments.</msg>
+<arg>var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:38.635541" elapsed="0.003096"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:38.641502" level="INFO">Executing JavaScript:
+var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());
+Without any arguments.</msg>
+<arg>var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:38.638637" elapsed="0.033365"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:15:38.628467" elapsed="0.043535"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${check_Hobbies1}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:15:38.672620" elapsed="0.030623"/>
+</kw>
+<kw name="Set Focus To Element" owner="SeleniumLibrary">
+<arg>${check_Hobbies1}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:38.703243" elapsed="0.019233"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:38.723005" level="INFO">Clicking element 'xpath=//label[@for="hobbies-checkbox-1"]'.</msg>
+<arg>${check_Hobbies1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:38.722476" elapsed="0.111074"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${check_Hobbies2}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-09-05T21:15:38.833550" elapsed="0.044027"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${check_Hobbies2}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:15:38.877577" elapsed="0.020859"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:38.898436" level="INFO">Clicking element 'xpath=//label[@for="hobbies-checkbox-2"]'.</msg>
+<arg>${check_Hobbies2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:38.898436" elapsed="0.092104"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${botao_Arquivo}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:15:38.990540" elapsed="0.026434"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:39.016974" level="INFO">Sending C:\Desafio_Accenture\Test\Resource\Locators\Upload\desafio.txt to browser.</msg>
+<arg>${botao_Arquivo}</arg>
+<arg>${arquivo_txt}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:39.016974" elapsed="0.042242"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:39.059216" level="INFO">Typing text 'Av. Brasil, 3333' into text field 'currentAddress'.</msg>
+<arg>${campo_Address}</arg>
+<arg>Av. Brasil, 3333</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:39.059216" elapsed="0.111496"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:39.170712" level="INFO">Clicking element 'state'.</msg>
+<arg>${lista_State}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:39.170712" elapsed="0.126520"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:39.297232" level="INFO">Sending key(s) ('Uttar Pradesh', 'TAB') to state element.</msg>
+<msg time="2025-09-05T21:15:39.617915" level="INFO">Sending keys Uttar Pradesh</msg>
+<msg time="2025-09-05T21:15:39.728606" level="INFO">Pressing special key TAB to element.</msg>
+<msg time="2025-09-05T21:15:39.728606" level="INFO">Releasing special key TAB.</msg>
+<arg>${lista_State}</arg>
+<arg>Uttar Pradesh</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-09-05T21:15:39.297232" elapsed="0.449684"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${lista_City}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-09-05T21:15:39.746916" elapsed="0.044886"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lista_City}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:15:39.791802" elapsed="0.020369"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:39.813171" level="INFO">Clicking element 'city'.</msg>
+<arg>${lista_City}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:39.813171" elapsed="0.091315"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:39.905684" level="INFO">Sending key(s) ('Agra', 'ENTER') to city element.</msg>
+<msg time="2025-09-05T21:15:40.205664" level="INFO">Sending keys Agra</msg>
+<msg time="2025-09-05T21:15:40.233785" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-09-05T21:15:40.233785" level="INFO">Releasing special key ENTER.</msg>
+<arg>${lista_City}</arg>
+<arg>Agra</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-09-05T21:15:39.905684" elapsed="0.343621"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:15:30.239458" elapsed="10.009847"/>
+</kw>
+<kw name="E submeto o formulário" owner="preenchendoForm">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${botao_Submit}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:15:40.250306" elapsed="0.029898"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:40.281204" level="INFO">Clicking button 'submit'.</msg>
+<arg>${botao_Submit}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:40.281204" elapsed="10.177970"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:15:40.249305" elapsed="10.209869"/>
+</kw>
+<kw name="Então o popup de confirmação é visualizado" owner="preenchendoForm">
+<kw name="Remover banners" owner="openBrowser">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:50.461184" level="INFO">Executing JavaScript:
+var b=document.getElementById('fixedban'); if(b){ b.remove(); }
+Without any arguments.</msg>
+<arg>var b=document.getElementById('fixedban'); if(b){ b.remove(); }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:50.461184" elapsed="0.005362"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:50.466546" level="INFO">Executing JavaScript:
+var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }
+Without any arguments.</msg>
+<arg>var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:50.466546" elapsed="0.007139"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:50.473685" level="INFO">Executing JavaScript:
+var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());
+Without any arguments.</msg>
+<arg>var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:15:50.473685" elapsed="0.004014"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:15:50.461184" elapsed="0.018525"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:50.499326" level="INFO">Current page contains element 'css=.modal-content'.</msg>
+<arg>${popup_Final}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-09-05T21:15:50.479709" elapsed="0.019617"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:50.525686" level="INFO">Current page contains text 'Thanks for submitting the form'.</msg>
+<arg>Thanks for submitting the form</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-09-05T21:15:50.499326" elapsed="0.026360"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:50.706669" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-09-05T21:15:50.525686" elapsed="0.180983"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:15:50.459174" elapsed="0.248498"/>
+</kw>
+<kw name="E clico para fechar o popup" owner="preenchendoForm">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:15:50.708683" level="INFO">Clicking button 'closeLargeModal'.</msg>
+<arg>closeLargeModal</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:15:50.708683" elapsed="10.141917"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:15:50.707672" elapsed="10.142928"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-05T21:16:00.850600" elapsed="2.219409"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:15:19.420204" elapsed="43.649805"/>
+</test>
+<doc>Desafio Accenture automação</doc>
+<status status="PASS" start="2025-09-05T21:15:19.299258" elapsed="43.770751"/>
+</suite>
+<suite id="s1-s2" name=".." source="C:\Desafio_Accenture\Test\test\..">
+<suite id="s1-s2-s1" name="Test" source="C:\Desafio_Accenture\Test\test\..\test">
+<suite id="s1-s2-s1-s1" name="Desafio" source="C:\Desafio_Accenture\Test\test\..\test\desafio.robot">
+<test id="s1-s2-s1-s1-t1" name="Preencher o formulário e verificar popup" line="10">
+<kw name="Dado Dado que estou na página de Practice Form" owner="preenchendoForm">
+<kw name="Abrir o site DemoQA" owner="openBrowser">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-09-05T21:16:03.091820" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000012FDBFCFD70&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-09-05T21:16:03.091820" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:03.091820" elapsed="0.006425"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:03.098245" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-09-05T21:16:03.098245" elapsed="1.534124"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:04.633444" level="INFO">Opening url 'https://demoqa.com'</msg>
+<arg>https://demoqa.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-09-05T21:16:04.633444" elapsed="11.659613"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-05T21:16:16.293057" elapsed="0.051801"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:16.353857" level="INFO">Page title is 'DEMOQA'.</msg>
+<arg>DEMOQA</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-09-05T21:16:16.345862" elapsed="0.008996"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-09-05T21:16:16.354858" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:16:03.091820" elapsed="13.263038"/>
+</kw>
+<kw name="Remover banners" owner="openBrowser">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:16.359705" level="INFO">Executing JavaScript:
+var b=document.getElementById('fixedban'); if(b){ b.remove(); }
+Without any arguments.</msg>
+<arg>var b=document.getElementById('fixedban'); if(b){ b.remove(); }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:16.354858" elapsed="0.022631"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:16.377489" level="INFO">Executing JavaScript:
+var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }
+Without any arguments.</msg>
+<arg>var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:16.377489" elapsed="0.026730"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:16.404678" level="INFO">Executing JavaScript:
+var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());
+Without any arguments.</msg>
+<arg>var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:16.404219" elapsed="0.013873"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:16:16.354858" elapsed="0.063234"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${opcao_Forms}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:16:16.418092" elapsed="0.035230"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${opcao_Forms}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-09-05T21:16:16.453322" elapsed="0.296197"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:16.749519" level="INFO">Clicking element '//*[@id="app"]/div/div/div[2]/div/div[2]/div/div[3]/h5'.</msg>
+<arg>${opcao_Forms}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:16.749519" elapsed="0.176374"/>
+</kw>
+<kw name="Remover banners" owner="openBrowser">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:16.926886" level="INFO">Executing JavaScript:
+var b=document.getElementById('fixedban'); if(b){ b.remove(); }
+Without any arguments.</msg>
+<arg>var b=document.getElementById('fixedban'); if(b){ b.remove(); }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:16.925893" elapsed="0.004906"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:16.931880" level="INFO">Executing JavaScript:
+var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }
+Without any arguments.</msg>
+<arg>var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:16.931880" elapsed="0.004490"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:16.936943" level="INFO">Executing JavaScript:
+var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());
+Without any arguments.</msg>
+<arg>var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:16.936370" elapsed="0.007708"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:16:16.925893" elapsed="0.018185"/>
+</kw>
+<kw name="Set Focus To Element" owner="SeleniumLibrary">
+<arg>${submenu_PractForm}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:16.944078" elapsed="0.056248"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${submenu_PractForm}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:16:17.000326" elapsed="0.004105"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:17.004431" level="INFO">Clicking element 'xpath=//span[@class="text" and text()="Practice Form"]'.</msg>
+<arg>${submenu_PractForm}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:17.004431" elapsed="0.116410"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:16:03.091820" elapsed="14.029993"/>
+</kw>
+<kw name="Quando preencho o formulário" owner="preenchendoForm">
+<kw name="Remover banners" owner="openBrowser">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:17.132517" level="INFO">Executing JavaScript:
+var b=document.getElementById('fixedban'); if(b){ b.remove(); }
+Without any arguments.</msg>
+<arg>var b=document.getElementById('fixedban'); if(b){ b.remove(); }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:17.131517" elapsed="0.010537"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:17.143130" level="INFO">Executing JavaScript:
+var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }
+Without any arguments.</msg>
+<arg>var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:17.143130" elapsed="0.010430"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:17.154565" level="INFO">Executing JavaScript:
+var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());
+Without any arguments.</msg>
+<arg>var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:17.153560" elapsed="0.010169"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:16:17.131517" elapsed="0.032212"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:17.163729" level="INFO">Typing text 'Adriano' into text field 'firstName'.</msg>
+<arg>${campo_Fname}</arg>
+<arg>Adriano</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:17.163729" elapsed="0.281447"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:17.446180" level="INFO">Typing text 'Queiroz' into text field 'lastName'.</msg>
+<arg>${campo_Lname}</arg>
+<arg>Queiroz</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:17.446180" elapsed="0.181753"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:17.627933" level="INFO">Typing text 'adriano@teste.com' into text field 'userEmail'.</msg>
+<arg>${campo_Email}</arg>
+<arg>adriano@teste.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:17.627933" elapsed="0.157882"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${radio_Male}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:16:17.787209" elapsed="0.271773"/>
+</kw>
+<kw name="Set Focus To Element" owner="SeleniumLibrary">
+<arg>${radio_Male}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:18.058982" elapsed="0.017615"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:18.076597" level="INFO">Clicking element 'xpath=//label[@for="gender-radio-1"]'.</msg>
+<arg>${radio_Male}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:18.076597" elapsed="0.306041"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:18.382638" level="INFO">Typing text '9999999999' into text field 'userNumber'.</msg>
+<arg>${campo_Mobile}</arg>
+<arg>9999999999</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:18.382638" elapsed="0.333455"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:18.716093" level="INFO">Clicking element 'dateOfBirthInput'.</msg>
+<arg>${campo_Date}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:18.716093" elapsed="0.303595"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:19.019688" level="INFO">Selecting options from selection list 'class=react-datepicker__year-select' by value 1981.</msg>
+<arg>class=react-datepicker__year-select</arg>
+<arg>1981</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-09-05T21:16:19.019688" elapsed="0.128639"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:19.148327" level="INFO">Selecting options from selection list 'class=react-datepicker__month-select' by value 6.</msg>
+<arg>class=react-datepicker__month-select</arg>
+<arg>6</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-09-05T21:16:19.148327" elapsed="0.084677"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:19.234004" level="INFO">Clicking element 'xpath=//div[contains(@class,'react-datepicker__day--025')]'.</msg>
+<arg>xpath=//div[contains(@class,'react-datepicker__day--025')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:19.234004" elapsed="0.113972"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T21:16:22.349168" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T21:16:19.347976" elapsed="3.001192"/>
+</kw>
+<kw name="Set Focus To Element" owner="SeleniumLibrary">
+<arg>${campo_Subject}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:22.349168" elapsed="0.018515"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${campo_Subject}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:16:22.367683" elapsed="0.013476"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:22.382178" level="INFO">Clicking element 'subjectsContainer'.</msg>
+<arg>${campo_Subject}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:22.381159" elapsed="0.067674"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:22.450843" level="INFO">Sending key(s) ('Economics', 'ENTER') to subjectsContainer element.</msg>
+<msg time="2025-09-05T21:16:22.735396" level="INFO">Sending keys Economics</msg>
+<msg time="2025-09-05T21:16:22.848660" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-09-05T21:16:22.848660" level="INFO">Releasing special key ENTER.</msg>
+<arg>${campo_Subject}</arg>
+<arg>Economics</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-09-05T21:16:22.448833" elapsed="0.454312"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-05T21:16:25.904625" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-05T21:16:22.904154" elapsed="3.000471"/>
+</kw>
+<kw name="Remover banners" owner="openBrowser">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:25.904625" level="INFO">Executing JavaScript:
+var b=document.getElementById('fixedban'); if(b){ b.remove(); }
+Without any arguments.</msg>
+<arg>var b=document.getElementById('fixedban'); if(b){ b.remove(); }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:25.904625" elapsed="0.004755"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:25.909380" level="INFO">Executing JavaScript:
+var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }
+Without any arguments.</msg>
+<arg>var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:25.909380" elapsed="0.012702"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:25.922082" level="INFO">Executing JavaScript:
+var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());
+Without any arguments.</msg>
+<arg>var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:25.922082" elapsed="0.051860"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:16:25.904625" elapsed="0.069317"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${check_Hobbies1}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:16:25.973942" elapsed="0.030812"/>
+</kw>
+<kw name="Set Focus To Element" owner="SeleniumLibrary">
+<arg>${check_Hobbies1}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:26.004754" elapsed="0.018369"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:26.024141" level="INFO">Clicking element 'xpath=//label[@for="hobbies-checkbox-1"]'.</msg>
+<arg>${check_Hobbies1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:26.023123" elapsed="0.101861"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${check_Hobbies2}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-09-05T21:16:26.125996" elapsed="0.047489"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${check_Hobbies2}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:16:26.174484" elapsed="0.025138"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:26.200715" level="INFO">Clicking element 'xpath=//label[@for="hobbies-checkbox-2"]'.</msg>
+<arg>${check_Hobbies2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:26.200715" elapsed="0.087183"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${botao_Arquivo}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:16:26.287898" elapsed="0.026075"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:26.315052" level="INFO">Sending C:\Desafio_Accenture\Test\Resource\Locators\Upload\desafio.txt to browser.</msg>
+<arg>${botao_Arquivo}</arg>
+<arg>${arquivo_txt}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:26.313973" elapsed="0.049731"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:26.364715" level="INFO">Typing text 'Av. Brasil, 3333' into text field 'currentAddress'.</msg>
+<arg>${campo_Address}</arg>
+<arg>Av. Brasil, 3333</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:26.363704" elapsed="0.132067"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:26.496405" level="INFO">Clicking element 'state'.</msg>
+<arg>${lista_State}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:26.496405" elapsed="0.119017"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:26.616420" level="INFO">Sending key(s) ('Uttar Pradesh', 'TAB') to state element.</msg>
+<msg time="2025-09-05T21:16:26.930630" level="INFO">Sending keys Uttar Pradesh</msg>
+<msg time="2025-09-05T21:16:27.013438" level="INFO">Pressing special key TAB to element.</msg>
+<msg time="2025-09-05T21:16:27.013438" level="INFO">Releasing special key TAB.</msg>
+<arg>${lista_State}</arg>
+<arg>Uttar Pradesh</arg>
+<arg>TAB</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-09-05T21:16:26.615422" elapsed="0.408618"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${lista_City}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-09-05T21:16:27.024040" elapsed="0.038920"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lista_City}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:16:27.062960" elapsed="0.029070"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:27.093124" level="INFO">Clicking element 'city'.</msg>
+<arg>${lista_City}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:27.093124" elapsed="0.102079"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:27.196096" level="INFO">Sending key(s) ('Agra', 'ENTER') to city element.</msg>
+<msg time="2025-09-05T21:16:27.496069" level="INFO">Sending keys Agra</msg>
+<msg time="2025-09-05T21:16:27.535802" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-09-05T21:16:27.535802" level="INFO">Releasing special key ENTER.</msg>
+<arg>${lista_City}</arg>
+<arg>Agra</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-09-05T21:16:27.196096" elapsed="0.349613"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:16:17.131517" elapsed="10.415217"/>
+</kw>
+<kw name="E submeto o formulário" owner="preenchendoForm">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${botao_Submit}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-09-05T21:16:27.546734" elapsed="0.030611"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:27.578369" level="INFO">Clicking button 'submit'.</msg>
+<arg>${botao_Submit}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:27.577345" elapsed="10.217011"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:16:27.546734" elapsed="10.247622"/>
+</kw>
+<kw name="Então o popup de confirmação é visualizado" owner="preenchendoForm">
+<kw name="Remover banners" owner="openBrowser">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:37.795862" level="INFO">Executing JavaScript:
+var b=document.getElementById('fixedban'); if(b){ b.remove(); }
+Without any arguments.</msg>
+<arg>var b=document.getElementById('fixedban'); if(b){ b.remove(); }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:37.795862" elapsed="0.004063"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:37.800927" level="INFO">Executing JavaScript:
+var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }
+Without any arguments.</msg>
+<arg>var f=document.getElementsByTagName('footer')[0]; if(f){ f.style.display='none'; }</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:37.800927" elapsed="0.004635"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:37.805562" level="INFO">Executing JavaScript:
+var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());
+Without any arguments.</msg>
+<arg>var ads=document.querySelectorAll("iframe[id^='google_ads_iframe']"); ads.forEach(a=&gt;a.remove());</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-09-05T21:16:37.805562" elapsed="0.009152"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:16:37.795862" elapsed="0.018852"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:37.831192" level="INFO">Current page contains element 'css=.modal-content'.</msg>
+<arg>${popup_Final}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-09-05T21:16:37.814714" elapsed="0.016478"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:37.859823" level="INFO">Current page contains text 'Thanks for submitting the form'.</msg>
+<arg>Thanks for submitting the form</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-09-05T21:16:37.831192" elapsed="0.028631"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:38.051742" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-09-05T21:16:37.860815" elapsed="0.190927"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:16:37.795862" elapsed="0.255880"/>
+</kw>
+<kw name="E clico para fechar o popup" owner="preenchendoForm">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-05T21:16:38.052750" level="INFO">Clicking button 'closeLargeModal'.</msg>
+<arg>closeLargeModal</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-05T21:16:38.052750" elapsed="10.160407"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:16:38.052750" elapsed="10.160407"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-09-05T21:16:48.214158" elapsed="2.225811"/>
+</kw>
+<status status="PASS" start="2025-09-05T21:16:03.091820" elapsed="47.348149"/>
+</test>
+<doc>Desafio Accenture automação</doc>
+<status status="PASS" start="2025-09-05T21:16:03.070009" elapsed="47.369960"/>
+</suite>
+<status status="PASS" start="2025-09-05T21:16:03.070009" elapsed="47.369960"/>
+</suite>
+<status status="PASS" start="2025-09-05T21:16:03.070009" elapsed="47.369960"/>
+</suite>
+<status status="PASS" start="2025-09-05T21:15:19.267298" elapsed="91.172671"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Desafio &amp; ..">Desafio &amp; ..</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Desafio">Desafio &amp; ...Desafio</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="..">Desafio &amp; .....</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2-s1" name="Test">Desafio &amp; ......Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2-s1-s1" name="Desafio">Desafio &amp; ......Test.Desafio</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
