@@ -1,0 +1,392 @@
+{
+	"info": {
+		"_postman_id": "50504e7f-b710-4cc9-b40f-f9e2aab04f96",
+		"name": "Desafio Accenture",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29541252"
+	},
+	"item": [
+		{
+			"name": "Criando Usuário",
+			"item": [
+				{
+					"name": "/Account/v1/User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validar o status\r",
+									"pm.test(\"Status code é 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"//Validando criação de usuário\r",
+									"pm.test(\"Usuário criado com sucesso\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"//Gravando variavel usuário id\r",
+									"let response = pm.response.json();\r",
+									"pm.environment.set(\"userId\", response.userID);\r",
+									"\r",
+									"//Validando usuário já cadastrado\r",
+									"pm.test(\"Usuário já cadastrado\", function () {\r",
+									"    pm.response.to.have.status(406);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"Adriano_Teste1\",\r\n  \"password\": \"Teste01!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Account/v1/User/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Account",
+								"v1",
+								"User",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gerando Token",
+			"item": [
+				{
+					"name": "/Account/v1/GenerateToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validar o status\r",
+									"pm.test(\"Status code é 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//Validando Token\r",
+									"pm.test(\"Token gerado\", function () {\r",
+									"    let jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.token).to.not.be.empty;\r",
+									"});\r",
+									"\r",
+									"//Gravando variável token\r",
+									"\r",
+									"let response = pm.response.json()\r",
+									"pm.environment.set(\"token\",response.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"Adriano_Teste1\",\r\n  \"password\": \"Teste01!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Account/v1/GenerateToken",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Account",
+								"v1",
+								"GenerateToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Validando Autorização",
+			"item": [
+				{
+					"name": "/Account/v1/Authorized",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validar o status\r",
+									"pm.test(\"Status code é 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//Validar usuario autorizado\r",
+									"pm.test(\"Usuario autorizado\", function () {\r",
+									"    let jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.true);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"Adriano_Teste1\",\r\n  \"password\": \"Teste01!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Account/v1/Authorized",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Account",
+								"v1",
+								"Authorized"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Validar livros disponíveis",
+			"item": [
+				{
+					"name": "/BookStore/v1/Books",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validar o status\r",
+									"pm.test(\"Status code é 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"let livros = pm.response.json().books;\r",
+									"pm.environment.set(\"isbn1\", livros[0].isbn);\r",
+									"pm.environment.set(\"isbn2\", livros[1].isbn);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/BookStore/v1/Books",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"BookStore",
+								"v1",
+								"Books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Alugando livros",
+			"item": [
+				{
+					"name": "/BookStore/v1/Books",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validar o status\r",
+									"pm.test(\"Status code é 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Livros alugados com sucesso\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer{{token}}",
+								"description": "Token gerado",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"{{userId}}\",\r\n  \"collectionOfIsbns\": \r\n  [\r\n    {\"isbn\": \"{{isbn1}}\"},\r\n    {\"isbn\": \"{{isbn2}}\"}\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/BookStore/v1/Books",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"BookStore",
+								"v1",
+								"Books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Listando detalhes do usuário",
+			"item": [
+				{
+					"name": "/Account/v1/User/usuario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Validar Status\r",
+									"pm.test(\"Status code é 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Account/v1/User/{{userId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Account",
+								"v1",
+								"User",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "DemoQa",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
